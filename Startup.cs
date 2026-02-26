@@ -14,6 +14,7 @@ using Microsoft.OpenApi.Models;
 using APIEmployeeDepartmentProject.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using APIEmployeeDepartmentProject.Services;
 
 namespace APIEmployeeDepartmentProject
 {
@@ -40,6 +41,9 @@ namespace APIEmployeeDepartmentProject
             // UseSqlServer tells EF Core about the use of SQL Server
             services.AddDbContext<AppDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            // Register randomstringgenerator using services
+            services.AddHttpClient<IRandomStringGenerator,RandomStringGenerator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
