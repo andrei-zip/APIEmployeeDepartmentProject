@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace APIEmployeeDepartmentProject.Models
 {
-    // A class reporesenting a Department in a company
+    // A class representing a Department in a company
     // That will be mapped to the SQL table "Departments"
     public class Department
     {
@@ -17,5 +18,10 @@ namespace APIEmployeeDepartmentProject.Models
 
         [Required, MaxLength(100)]
         public string OfficeLocation { get; set; }
+
+        // Allowes departments to have many employees
+        public ICollection<Employee> Employees { get; set; } = new List<Employee>();
+
+
     }
 }
