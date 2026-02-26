@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using APIEmployeeDepartmentProject.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace APIEmployeeDepartmentProject
 {
@@ -32,6 +34,11 @@ namespace APIEmployeeDepartmentProject
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APIEmployeeDepartmentProject", Version = "v1" });
             });
+
+            // Register the DBContext with dependency injection
+            // UseSqlServer tells EF Core about the use of SQL Server
+            services.AddDbContext<AppDbContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
