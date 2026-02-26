@@ -21,7 +21,7 @@ namespace APIEmployeeDepartmentProject.Models
 
         // Unique code for the project generated with the use of external api "Codito"
 
-        [Required,MaxLength(50)]
+        [MaxLength(50)]
         public string ProjectCode { get; set; }
 
         // Project can have many employees assigned 

@@ -24,7 +24,7 @@ namespace APIEmployeeDepartmentProject.Services
         {
             // read base urf and generate path - 
             var baseUrl = _configuration["RandomCodeApi:BaseUrl"];
-            var path = _configuration["RandomeCodeApi:GeneratePath"];
+            var path = _configuration["RandomCodeApi:GeneratePath"];
 
 
             // if settings are missing in appsettings.json throw invalid operation
@@ -39,7 +39,7 @@ namespace APIEmployeeDepartmentProject.Services
             var request = new RandomCodeRequest
             {
                 CodesToGenerate = 1,
-                OnlyUnique = true,
+                OnlyUniques = true,
                 CharactersSets = new List<string>
                 {
                     allowed,allowed,allowed,allowed, allowed, allowed, allowed, allowed,

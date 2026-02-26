@@ -35,6 +35,9 @@ namespace APIEmployeeDepartmentProject.Data
             // Project code must be unique
             modelBuilder.Entity<Project>().HasIndex(p=>p.ProjectCode).IsUnique();
 
+            // Project code is required
+            modelBuilder.Entity<Project>().Property(p=> p.ProjectCode).IsRequired().HasMaxLength(50);
+
             //Budget precision to avoid truncation
             modelBuilder.Entity<Project>().Property(p=>p.Budget).HasPrecision(18, 2);
 

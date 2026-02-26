@@ -9,7 +9,7 @@ namespace APIEmployeeDepartmentProject.Services
         public int CodesToGenerate { get; set; }
 
         // Making sure codito generates unique codes
-        public bool OnlyUnique { get; set; }
+        public bool OnlyUniques { get; set; }
 
         // List of character sets expected
         public List<string> CharactersSets { get; set; }
