@@ -20,6 +20,9 @@ namespace APIEmployeeDepartmentProject.Controllers
             _db = db;
         }
 
+
+        // ENDPOINTS
+
         // [GET] /api/departments - returns a list with all departments
         [HttpGet]
         public async Task<ActionResult<List<Department>>> GetAll() {
