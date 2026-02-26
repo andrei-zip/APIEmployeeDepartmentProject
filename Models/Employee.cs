@@ -34,6 +34,8 @@ namespace APIEmployeeDepartmentProject.Models
         // allows acces to the department 
         public Department Department { get; set; }
 
-        // icollection for projects
+        // icollection for projects - allowes one employee to be assigne to many projects
+        // assignet to the join table EmployeeProject
+        public ICollection<EmployeeProject> EmployeeProjects { get; set; } = new List<EmployeeProject>();
     }
 }
