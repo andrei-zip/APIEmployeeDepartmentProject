@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace APIEmployeeDepartmentProject.Models
 {
@@ -19,6 +20,7 @@ namespace APIEmployeeDepartmentProject.Models
         [Required, MaxLength(100)]
         public string OfficeLocation { get; set; }
 
+        [JsonIgnore]
         // Allowes departments to have many employees
         public ICollection<Employee> Employees { get; set; } = new List<Employee>();
 
